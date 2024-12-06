@@ -7,3 +7,6 @@ conda activate infinisearch
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
 pip install open-clip-torch opencv-python pymilvus flask flask-cors
 ```
+
+
+nodemon --exec python3 -m api --ext py,json

@@ -1,3 +1,4 @@
 *.db
 test_videos/*
 .video_search.db.lock
+__pycache__
