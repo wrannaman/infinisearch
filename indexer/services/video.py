@@ -7,14 +7,14 @@ def url_to_video(url):
     """Open a video from URL using cv2"""
     try:
         stream = urlopen(url)
-        bytes = bytes()
+        video_bytes = bytes()
         while True:
             chunk = stream.read(1024*1024)
             if not chunk:
                 break
-            bytes += chunk
+            video_bytes += chunk
 
-        array = np.asarray(bytearray(bytes), dtype=np.uint8)
+        array = np.asarray(bytearray(video_bytes), dtype=np.uint8)
         temp_file = "temp_video.mp4"
         with open(temp_file, "wb") as f:
             f.write(array)

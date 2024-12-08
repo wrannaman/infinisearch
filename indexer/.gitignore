@@ -2,3 +2,5 @@
 test_videos/*
 .video_search.db.lock
 __pycache__
+.env
+.DS_Store

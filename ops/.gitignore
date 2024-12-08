@@ -1,0 +1,4 @@
+embedEtcd.yaml
+standalone_embed.sh
+user.yaml 
+volumes/*

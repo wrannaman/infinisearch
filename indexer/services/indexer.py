@@ -1,6 +1,7 @@
 from config import client
 from models.clip import process_frame
 from services.video import url_to_video
+import cv2
 
 
 def setup_collection():
@@ -24,6 +25,13 @@ def setup_collection():
 def index_video(video_url, video_name, folder_id='default', frame_interval=60):
     """Index a video from URL"""
     setup_collection()
+
+    # Delete existing entries for this video name in this folder
+    client.delete(
+        collection_name="video_features",
+        expr=f'video_name == "{video_name}" and folder_id == "{folder_id}"'
+    )
+
     cap = url_to_video(video_url)
 
     fps = cap.get(cv2.CAP_PROP_FPS)
